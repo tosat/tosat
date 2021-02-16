@@ -5,17 +5,17 @@ name: Deploy Virtual Machine
 # Controls when the action will run. 
 on:
   workflow_dispatch:
-  inputs:
-  resourceGroupName:
-  description: Resource Group Name
-  required: true
+   inputs:
+   resourceGroupName:
+   description: Resource Group Name
+   required: true
 
 jobs:
   deploy-virtual-machine:
     
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-       -uses: actions/checkout@v2
-        -name: Run a one-line script
-         run: echo Hello, ${{ github.event.inputs.resourceGroupName }}
+        - uses: actions/checkout@v2
+        - name: Run a one-line script
+          run: echo Hello, ${{ github.event.inputs.resourceGroupName }}
 
